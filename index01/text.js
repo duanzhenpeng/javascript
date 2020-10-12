@@ -40,13 +40,44 @@ console.log(strMsg1);
 //alert('酷热难耐,火辣的太阳地下，我挺拔的身姿，成为最独特的风景。\n 我审视四周，这里，是我的舞台，我就是天地间的王者。\n 这一刻，我豪气冲天，终于大喊一声："首破烂了～"')
 
 // 通过length属性可以获取整个字符串的长度。
-    var strMsg = "我是帅气的人";
-    console.log(strMsg.length)//显示6
+    //var strMsg = "我是帅气的人";
+//console.log(strMsg.length)//显示6
 
 //弹出一个输入框，让用户输入年龄
-var age = prompt('请输入年龄') 
+//var age = prompt('请输入年龄') 
 //把用户输入的值用变量存起来，在将输入的年龄与所要输出的字符串连接起来
-var str = alert('我今年已经'+ age + '岁了');
+//var str = alert('我今年已经'+ age + '岁了');
 
-var myName = prompt('请输入姓名：')
-alert('尊敬的'+myName+'用户，欢迎回来～')
+//var myName = prompt('请输入姓名：')
+//alert('尊敬的'+myName+'用户，欢迎回来～')
+
+//parseInt()方法 可以把字符串转换为数字型 得到的是整数
+// console.log( parseInt('3.14')) //3
+//parseInt()方法 可以把字符串转换为数字型 得到的是小数 浮点数
+// console.log(parseFloat('3.14')) //3.14
+// console.log(Number('132'))
+// console.log('123' * 1) //123
+
+//计算年龄
+// var nian = prompt('请输入出生年')
+// var age = ('2020' - nian)
+// alert('我今年'+ age + '岁了')
+
+// var list = prompt('请输入第一个值：');
+// var list1 = prompt('请输入第二个值：');
+// alert( parseInt(list)+ parseInt(list1))
+
+// var Myname = prompt('请您输入姓名:');
+// var age = prompt('请输入年龄:');
+// var sex =  prompt('请输入性别:');
+// alert('您的姓名是：'+Myname+'\n您的年龄是：'+age+ '\n您的性别是：'+sex);
+
+console.log([...[...'....']])
+
+//课堂练习
+var num1 = 100;
+var num2 = 200;
+var res1 = num1 > num2;//flase
+var res2 = num1 == 11; //flase
+var res3 = num1 != num2;//true
+console.log(res3);
