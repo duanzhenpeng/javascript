@@ -81,3 +81,70 @@ var res1 = num1 > num2;//flase
 var res2 = num1 == 11; //flase
 var res3 = num1 != num2;//true
 console.log(res3);
+
+//控制流if语句判断练习
+// var age = prompt('请输入年龄：')
+// if(age >= 18){
+//     alert('允许进网吧！')
+// }else{
+//     alert('未成年请离开')
+// }
+
+// var year = prompt('请你输入年份：')
+// if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+//     alert('您输入的年份是闰年')
+// } else {
+//     alert('您输入的年份是平年')
+// }
+
+// var myName = prompt('请您输入姓名查看是否中奖！')
+// if (myName === '刘德华') {
+//     alert('您好；你中了5元！')
+// } else {
+//     alert('您好；你没有中奖！')
+// }
+
+// var Mark = prompt('请输入您的分数：')
+// if (Mark >= 90) {
+//     console.log('优秀')
+// } else if (Mark >= 80) {
+//     console.log('良好')
+// } else if (Mark >= 70) {
+//     console.log('不错')
+// }else {
+//     console.log('差')
+// }
+
+//三元 表达式
+// var num = 10;
+//     var result = num > 5 ? '对' : '不对';
+//     console.log(result);
+
+// var time = prompt('请您输入一个 0～59之间的数字')
+// var resu = time < 10 ? '0' + time : time
+// alert(resu)
+
+//switch 语法练习
+switch (3){
+    case 1:
+        console.log('这是1')
+        break;
+    case 2:
+        console.log('这是2')
+        break;
+    default:
+        console.log('没有匹配结果')
+}
+
+//switch 练习
+var fruit = prompt('请输入查询的水果：')
+switch (fruit){
+    case '苹果':
+        alert('苹果的价格是： 35元/斤');
+        break;
+    case '苹果':
+        alert('苹果的价格是： 35元/斤');
+        break;
+    default:
+        alert('没有这个水果。')
+}
