@@ -51,9 +51,41 @@
 // console.log('偶数和'+ even);
 // console.log('奇数和'+ odd);
 
-var num = prompt('请输入班级总人数：')
-for(var i = 1; i <= num; i++){
-    var fen = prompt('请输入'+i+'的成绩：')
+
+// var num = parseInt (prompt('请输入班级总人数：'));
+// var avg = 0;
+// var list = 0;
+// for(var i = 1; i <= num; i++){
+//     list += parseInt(prompt('请输入'+i+'的成绩：')) ;
+    
+// }
+// avg = list / num ; 
+// console.log(list);
+// console.log(avg);
+
+// var str = ''
+// for(var i = 1; i <=5;i++){
+//     str = str +'*'
+// }
+// console.log(str);
+
+// var str = ''
+// for(var i = 1; i <= 5;i++){
+//     for(var j = 1; j <=5; j++){
+//         str = str + '*'
+//     }
+//     str += '\n'
+// }
+// console.log(str);
+
+
+var rows = prompt("请您输入行数：")
+var cols = prompt("请您输入列数：")
+var str = "";
+for(var i = 1; i <= rows;i++){
+    for(var j = 1; j <= cols; j++){
+        str += '*'
+    }
+    str += '\n'
 }
-fen = fen + i;
-console.log(fen)
+console.log(str);
