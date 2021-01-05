@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- v-model.lazy惰性更新 -->
+    <!-- v-model.trim 自动去除空格  -->
+    <!-- v-model.number 自动转换数字型 -->
+    <div id="app">
+        <input type="text" v-model.number="prict"><br>
+        {{prict}}
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.4.2/vue.js"></script>
+    <script src="js/main03.js"></script>
+</body>
+</html>

@@ -79,13 +79,24 @@
 // console.log(str);
 
 
-var rows = prompt("请您输入行数：")
-var cols = prompt("请您输入列数：")
-var str = "";
-for(var i = 1; i <= rows;i++){
-    for(var j = 1; j <= cols; j++){
-        str += '*'
-    }
-    str += '\n'
+// var rows = prompt("请您输入行数：")
+// var cols = prompt("请您输入列数：")
+// var str = "";
+// for(var i = 1; i <= rows;i++){
+//     for(var j = 1; j <= cols; j++){
+//         str += '*'
+//     }
+//     str += '\n'
+// }
+// console.log(str);
+
+
+var bj = {
+    name: "王",
+    age: 20,
+    sex: "男"
 }
-console.log(str);
+for (var k in bj){
+    console.log(k);
+    console.log(bj[k]);
+}

@@ -580,3 +580,99 @@ console.log(str)
     * 4.构造函数泛指一大类，比如苹果，红苹果绿苹果都称为苹果。
     * 5.对象实例特指一个事物，比如这个苹果。
     * 6.for...in 语句用对对象的属性进行循环操作。
+
+### JavaScript内置对象
+1. Math数学对象 不是一个构造函数，不需要new来调用直接使用里面的属性和方法。
+    * 里面的参数可有可无，没有返回是 -Infinity
+    * Math.max()里面的数字必须是数字型的，不是数字型的返回NaN
+```js
+//利用对象封装子的数字对象 里面有PI最大值和最小值
+// 创建一个myMath对象
+var myMath = {
+    PI: 3.1415926,
+    max: function(){
+        //arguments 用来接收传过来的所有值
+        var max = arguments[0]
+        //遍历接收的值
+        for(var i = 1; i < arguments.length; i++){
+            // 判断比较值，当arguments 大于Max
+            if(arguments[i] > max){
+                // 则Max = arguments[i]的值
+                max = arguments[i]
+            }
+        }
+        //返回结果max
+        return max
+    },
+    min: function(){
+        var min = arguments[0]
+        for(var i = 1; i<arguments.length;i++){
+            if(arguments[i] < min){
+                min = arguments[i]
+            }
+        }
+        return min;
+    }
+}
+    console.log(myMath.PI);
+    console.log(myMath.max(123,2,3,41231,123));
+    console.log(myMath.min(123123,-23,3213,2,12,-1));
+```
+* Math常用方法
+    * Math.PI //圆周率
+    * Math.max / Math.min //最大值和最小值  
+    * Math.abs //绝对值方法
+    * Math.floor //向下取整，往最下的取值
+    * Math.ceil //向上取整，往最大的取值
+    * Math.round //四舍五入，.5往大取
+    * Math.random() //对象随机数方法 返回一个随机小数
+```js
+//2. 得到两个数之间的随机整数，并且包含这两个数
+    function getRandom(max , min){
+        //公式
+        return Math.floor(Math.random() * (max - min + 1)) + min;  //记
+    }
+    //随机点名
+    var arr = ['张三','李四','麻子', '王五' , '鲁班']
+    // console.log(getRandom(1,100));
+    console.log(arr[getRandom(0, arr.length -1)]);
+```
+2. Date日期对象
+* Date对象和Math对象不一样，是一个构造函数 必须使用new 来调用创建我们的日期对象。
+    * Dtae()获取当前时间必须实例化
+    * Date()构造函数的参数：参数常用的写法  数字型或字符串型
+```js
+    //1.使用date 如果没有参数，则返回当前系统时间
+    var date = new Date();
+    console.log(date);
+    //2.参数常用的写法  数字型或字符串型
+        // 数字型
+    var date1 = new Date(2021,1,15)
+    console.log(date1);
+        // 字符串型
+    var date2 = new Date('2021-01-05 8:8:8')
+    console.log(date2);
+```
+* date方法
+```js
+    //1.格式化日期 年月日
+    var date = new Date();
+    //2.返回当前年份
+    console.log(date.getFullYear());
+    //3.返回当前月份 返回的月份小1月 必须+1
+    console.log(date.getMonth()) + 1;
+    //4.返回几号
+    console.log(date.getdate());
+    //5.返回星期几 周日返回的是0
+    console.log(date.getDay());
+    var arr = ['星期一','星期二','星期三','星期四','星期五','星期六']
+    var day = date.getDay();
+    // 时 分 秒
+    console.log(date.Hours());  //时
+    console.log(date.getminutes()); //分
+    console.log(date.getSeconds()); //秒
+```
+### Vue
+1. v-for
+
+2. v-on事件  方法定义methods里面。
