@@ -172,11 +172,25 @@
     //     // 字符串型
     // var date2 = new Date('2021-01-05 8:8:8')
     // console.log(date2);
+    //日期
+    // var date = new Date();
+    // var year =  date.getFullYear();
+    // var month = date.getMonth()+1;
+    // var dates = date.getDate();
+    // var arr = ['星期一','星期二','星期三','星期四','星期五','星期六']
+    // var day = date.getDay();
+    // console.log('今天的日期是：' + year + '年' + month + '月' + dates + '日 ' + arr[day]);
 
-    var date = new Date();
-    var year =  date.getFullYear();
-    var month = date.getMonth()+1;
-    var dates = date.getDate();
-    var arr = ['星期一','星期二','星期三','星期四','星期五','星期六']
-    var day = date.getDay();
-    console.log('今天的日期是：' + year + '年' + month + '月' + dates + '日 ' + arr[day]);
+    //当前时分秒
+    function getTime (){
+        var time = new Date();
+        var h = time.getHours();
+        h = h < 10 ? '0'+ h : h;
+        var m = time.getMinutes();
+        m = m < 10 ? '0' + m : m;
+        var s = time.getSeconds();
+        s = s < 10 ? '0'+ s : s;
+        return h + ':' + m + ':' + s;
+    }
+    console.log(getTime());
+

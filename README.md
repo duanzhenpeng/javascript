@@ -672,7 +672,128 @@ var myMath = {
     console.log(date.getminutes()); //分
     console.log(date.getSeconds()); //秒
 ```
-### Vue
-1. v-for
+```js
+     //倒计时案例
+    function countDown(time) {
+        var nowTime = new Date(); //返回的时当前的毫秒数
+        var inputTime = +new Date(time);//返回的时用户输入时间总的毫秒数
+        var times = (inputTime - nowTime) / 1000; //times时剩余时间的秒数
+        var d = parseInt(times / 60 / 60 / 24);//天
+        d = d < 10 ? '0' + d : d;
+        var h = parseInt(times / 60 / 60  % 24);//时
+        h = h < 10 ? '0'+ h : h;
+        var m = parseInt(times / 60 % 60);//分
+        m = m < 10 ? '0'+ m : m;
+        var s = parseInt(times % 60);//秒
+        s = s < 10 ? '0'+ s :s;
+        return d + '天' + h + '时' + m +'分'+ s + '秒';
+    }
+    console.log(countDown('2021-1-7 18:00:00'));
+```
+3. 数组对象
+* 利用数组字面量创建数组
+```js
+    var arr = []
+```
+* 利用new Array()
+```js
+    //创建了一个空数组 如果（）写一个数表示长度，如果放数组元素需写两个值以上。
+    var arr = new Array();  //创建了一个空数组
+```
+* 检测是否为数组
+    * instanceof 运算符  和 Array.isArray()方法
+    ```js
+    //(1) instanceof 运算符
+    var arr = [];
+    console.log(arr instanceof Array);
+    //(2) Array.isArray(参数)；
+    var arr1 = [];
+    console.log(Array.isArray(arr1));
+    ```
+* 添加和删除数组元素方法
+```js
+    var arr = [1,2,3,4]
+    //(1) push()方法 在末尾添加一个或多个数组元素 push 推
+    // arr.push(5,6,7)
+    console.log(arr.push(5,6,7));  //数组返回结果是的数组长度，同时数组也元素会改变
+    console.log(arr);   // 给数组增加新的元素
+    //(2)unshift()方法 在数组的前面添加一个或多个数组元素 
+    // arr.unshift(-1,0)
+    console.log(arr.unshift(-1,0)); //返回值是数组的长度，同时也会在数组前面增加数组元素 
+    console.log(arr);
+    //(3)pop() 删除最后一个元素
+    //arr.pop() //pop()方法 没有参数
+    console.log(arr.pop());//返回的结果是删除的元素，同时相同数组也发生改变
+    console.log(arr);
+    //(4)shift() 删除数组的第一个元素
+    // arr.shift()
+    console.log(arr.shift());//返回的结果是删除的元素，同时相同的数组也会发生改变
+    console.log(arr);
+```
+* 数组反转reverse()方法
+    ```js
+    var arr2 = [1,2,3,4,5,6]
+    arr2.reverse();
+    console.log(arr2); //654321
+    ```
+* 数组排序（冒泡排序）sort()方法
+    ```js
+    var arr3 = [1,7,13,4,77]
+    arr3.sort() // 1,13,4,7,77.从个数1开始排序
+    arr3.sort(function(a,b){
+       // return a - b; //升序排序 1，4，7，13，77
+       return b - a;    //倒序排序77，13，7，4，1
+    })
+    console.log(arr3);
+    ```
+* 从前面获取数组元素索引号indexOf(数组元素)
+    * indexOf(数组元素)返回该数组的索引号，只返回第一个满足条件的索引号，如果找不到返回-1.
+    ```js
+    var arr4 = ['red' , 'bule' , 'yellow' , 'bule']
+    //indexOf(数组元素)返回该数组的索引号，只返回第一个满足条件的索引号，如果找不到返回-1.
+    console.log(arr4.indexOf('bule')); //1
+    ```
+* 从后面获取数组元素索引号lastIndexOf(数组元素)
+    ```js
+    var arr4 = ['red' , 'bule' , 'yellow' , 'bule']
+    console.log(arr4.lastIndexOf('bule')); //3
+    ```
+* 数组方法使用案例练习
+    * 用push()将低于2000的数元素放到新数组里
+    ```js
+    var arr1 = [1500,1300,1800,2000,2100,1800]
+    var newArr1 = []
+    for(var i = 0;i < arr.length; i++){
+        if(arr1[i] < 2000){
 
-2. v-on事件  方法定义methods里面。
+            newArr1.push(arr1[i])
+        }
+    }
+    console.log(newArr1);
+    ```
+    * 数组去重，将旧数组重复的数组元素放到新数组里。
+    ```js
+    // 数组去重，把旧数组不重复的元素取出放到新数组里
+    function unique(ar){
+        var newArr5 = [];
+        for(var i = 0; i < ar.length; i++){
+            if(newArr5.indexOf(ar[i]) === -1){
+                newArr5.push(ar[i])
+            }
+        }
+        return newArr5;
+    }
+    var demo = unique(['c','a','x','v','x','s','c']);
+    console.log(demo);
+    ```
+---
+* 数组方法总结
+    1. push()方法    在数组末尾添加一个或多个元素，返回值是数组的长度。
+    2. unshift()方法 在数组前面添加一个或多个数组元素，返回值是数组的长度。
+    3. pop()方法     删除最后一个元素，返回的是删除的值。
+    4. shift()方法   删除第一个元素，返回的是删除的值。
+    5. reverse()方法 用于数组的翻转。
+    6. sort()方法    数组的排序（冒泡排序）。
+    7. indexOf()方法 从前面获取数组元素索引号，只返回第一个满足条件的索引号，如果找不到返回-1.
+    8. lastIndexOf()方法 从后面获取数组元素索引号，只返回一个满足条件，如果找不到返回-1.
+---
